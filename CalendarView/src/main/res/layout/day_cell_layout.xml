@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:background="#FF0000"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/cell_solar_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/cell_lunar_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="初九"
+        android:layout_alignParentRight="true"
+        android:gravity="right"
+        android:layout_toRightOf="@id/cell_solar_tv"
+        android:singleLine="true"
+        android:layout_alignBottom="@id/cell_solar_tv" />
+
+    <TextView
+        android:id="@+id/cell_festival"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_below="@id/cell_solar_tv"
+        android:text="劳动节" />
+</RelativeLayout>

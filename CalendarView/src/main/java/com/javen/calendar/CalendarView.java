@@ -2,7 +2,6 @@ package com.javen.calendar;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 import java.util.Calendar;
 
 import static java.util.Calendar.MONDAY;
-import static java.util.Calendar.SUNDAY;
 
 /**
  * Created by javen on 13-11-5.
@@ -138,11 +136,14 @@ public class CalendarView extends GridView {
             final Calendar itemCalendar = (Calendar) getItem(position);
             final String date = itemCalendar.get(Calendar.DATE) + "";
             int itemHeight = parent.getHeight() / 6;
-            final TextView tv = new TextView(mContext);
-            tv.setLayoutParams(new LayoutParams(-1, itemHeight));
-            tv.setText(date);
-            tv.setGravity(Gravity.CENTER);
-            return tv;
+//            final TextView tv = new TextView(mContext);
+//            tv.setLayoutParams(new LayoutParams(-1, itemHeight));
+//            tv.setText(date);
+//            tv.setGravity(Gravity.CENTER);
+            DayCellView cellView = new DayCellView(mContext);
+            cellView.setLayoutParams(new LayoutParams(-1, itemHeight));
+            cellView.setValue(date, "初" + date, "劳动节");
+            return cellView;
         }
 
 
